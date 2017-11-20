@@ -1,0 +1,24 @@
+﻿@model Database.Models.Game
+@{
+    ViewBag.Title = "Apagar Jogo";
+}
+<form action="/Game/Delete" method="post">
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="well well-lg">
+                <div class="panel-body">
+                    <strong>@Html.DisplayNameFor(m => m.Name): </strong> <span>@Html.DisplayTextFor(m => m.Name)</span>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="/Game" class="btn btn-default"><i class="glyphicon glyphicon-share-alt"></i> Voltar</a>
+                    <button class="btn btn-danger pull-right" type="submit"><i class="glyphicon glyphicon-trash"></i> Apagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,30 @@
+﻿@model Database.Models.Game
+@{
+    ViewBag.Title = "Gerenciar Jogo";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.RowVersion)
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> Salvar</button>
+            <a href="/Game/Index" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+        </div>
+    </div>
+}
